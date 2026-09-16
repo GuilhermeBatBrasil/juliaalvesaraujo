@@ -1,0 +1,25 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.main {
+  flex: 1;
+}
+
+.skipLink {
+  position: absolute;
+  left: var(--spacing-md);
+  top: -100px;
+  z-index: var(--z-overlay);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  transition: top var(--transition-fast);
+}
+
+.skipLink:focus-visible {
+  top: var(--spacing-md);
+}
