@@ -1,16 +1,19 @@
-import { Button } from "@/components/ui/Button/Button";
-import { Section } from "@/components/ui/Section/Section";
+import { About } from "@/components/sections/About/About";
+import { Contact } from "@/components/sections/Contact/Contact";
+import { Hero } from "@/components/sections/Hero/Hero";
+import { InstagramFeed } from "@/components/sections/InstagramFeed/InstagramFeed";
+import { Journey } from "@/components/sections/Journey/Journey";
+import { Sessions } from "@/components/sections/Sessions/Sessions";
 
 export default function HomePage() {
   return (
-    <Section
-      id="inicio"
-      eyebrow="PLACEHOLDER — categoria"
-      title="PLACEHOLDER — título principal da home"
-      subtitle="PLACEHOLDER — subtítulo/descrição. O conteúdo e o design definitivos serão construídos a partir das referências visuais."
-      titleAs="h1"
-    >
-      <Button href="/contato">Entre em contato</Button>
-    </Section>
+    <>
+      <Hero />
+      <About />
+      <Journey />
+      <Sessions />
+      <Contact />
+      <InstagramFeed />
+    </>
   );
 }

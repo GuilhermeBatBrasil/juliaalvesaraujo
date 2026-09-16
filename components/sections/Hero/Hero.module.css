@@ -1,0 +1,128 @@
+.hero {
+  padding-block: 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Coluna de texto */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 36rem;
+}
+
+.name {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+.crp {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: rgba(53, 57, 50, 0.8);
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+.actions {
+  display: flex;
+}
+
+/* Coluna da foto circular */
+.photoWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.photo {
+  position: relative;
+  width: 16rem;
+  height: 16rem;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background-color: #e5e5e5;
+  box-shadow: var(--shadow-sm);
+}
+
+.photoImage {
+  object-fit: cover;
+  object-position: center 28%;
+  transform: scale(1.25);
+}
+
+@media (min-width: 640px) {
+  .name {
+    font-size: var(--font-size-3xl);
+  }
+
+  .crp {
+    font-size: var(--font-size-lg);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-2xl);
+  }
+
+  .description {
+    font-size: var(--font-size-base);
+    text-align: left;
+  }
+
+  .photo {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-block: 6rem;
+  }
+
+  .name {
+    font-size: var(--font-size-4xl);
+  }
+
+  .photo {
+    width: 24rem;
+    height: 24rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-block: 7rem;
+  }
+
+  .grid {
+    grid-template-columns: 7fr 5fr;
+    gap: 2rem;
+  }
+
+  .photoWrapper {
+    justify-content: flex-end;
+  }
+}

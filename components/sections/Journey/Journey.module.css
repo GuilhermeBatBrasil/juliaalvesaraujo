@@ -1,0 +1,53 @@
+.journey {
+  background-color: var(--color-background);
+  border-bottom: 1px solid rgba(232, 232, 226, 0.4);
+  padding-block: 5rem;
+}
+
+.inner {
+  text-align: center;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.pathWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Caminho orgânico sinuoso — metáfora visual da jornada */
+.path {
+  width: 5rem;
+  height: 3.5rem;
+  color: #a3a3a3;
+}
+
+.text {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .text {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (min-width: 768px) {
+  .journey {
+    padding-block: 7rem;
+  }
+}

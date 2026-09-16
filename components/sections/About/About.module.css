@@ -1,0 +1,90 @@
+.about {
+  background-color: var(--color-olive);
+  color: #fff;
+  padding-block: 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* Retrato */
+.photoWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.photo {
+  position: relative;
+  width: 100%;
+  max-width: 24rem;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: rgba(74, 87, 59, 0.4);
+  box-shadow: var(--shadow-md);
+}
+
+.photoImage {
+  object-fit: cover;
+  object-position: 30% center;
+  transform: scale(1.1);
+}
+
+/* Biografia */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 1.5rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-light);
+  line-height: var(--line-height-base);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.highlight {
+  font-weight: var(--font-weight-semibold);
+  color: #fff;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .text {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (min-width: 768px) {
+  .about {
+    padding-block: 6rem;
+  }
+
+  .grid {
+    grid-template-columns: 5fr 7fr;
+    gap: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 2.25rem;
+  }
+}
