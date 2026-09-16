@@ -45,9 +45,8 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} | ${siteConfig.crp}`,
     description: siteConfig.description,
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  // Os ícones são detectados automaticamente pelo Next a partir dos
+  // arquivos app/favicon.ico, app/icon.png e app/apple-icon.png.
   robots: {
     index: true,
     follow: true,

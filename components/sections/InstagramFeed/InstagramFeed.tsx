@@ -1,20 +1,24 @@
 import Image from "next/image";
 
 import { Container } from "@/components/layout/Container/Container";
+import { getInstagramPosts } from "@/lib/instagram";
+import { siteConfig } from "@/lib/site-config";
+import type { InstagramPost } from "@/types/instagram";
 
 import styles from "./InstagramFeed.module.css";
 
-/**
- * Grade de 8 imagens. Os arquivos em /public/images/julia/instagram-N.jpg
- * podem ser substituídos sem alterar o layout.
- * TODO: substituir pelos textos alternativos reais de cada publicação.
- */
-const posts = Array.from({ length: 8 }, (_, index) => ({
-  src: `/images/julia/instagram-${index + 1}.jpg`,
-  alt: `Publicação ${index + 1} do Instagram de Júlia Araújo`,
-}));
+/** Usa a legenda como texto alternativo, limitada a uma frase curta. */
+function buildAltText(post: InstagramPost): string {
+  if (!post.caption) return "Publicação do Instagram de Júlia Araújo";
 
-export function InstagramFeed() {
+  const firstLine = post.caption.split("\n")[0].trim();
+  return firstLine.length > 120 ? `${firstLine.slice(0, 117)}...` : firstLine;
+}
+
+export async function InstagramFeed() {
+  const posts = await getInstagramPosts();
+  const { instagram } = siteConfig.social;
+
   return (
     <section
       id="meu-instagram"
@@ -27,18 +31,55 @@ export function InstagramFeed() {
         </h2>
 
         <ul className={styles.grid}>
-          {posts.map((post) => (
-            <li key={post.src} className={styles.item}>
+          {posts.map((post) => {
+            const alt = buildAltText(post);
+
+            const image = (
               <Image
-                src={post.src}
-                alt={post.alt}
+                src={post.imageUrl}
+                alt={alt}
                 fill
                 sizes="(max-width: 640px) 50vw, 25vw"
                 className={styles.image}
+                // Imagens da CDN do Instagram já vêm otimizadas.
+                unoptimized={post.imageUrl.startsWith("http")}
               />
-            </li>
-          ))}
+            );
+
+            return (
+              <li key={post.id} className={styles.item}>
+                {post.permalink ? (
+                  <a
+                    href={post.permalink}
+                    className={styles.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {image}
+                    <span className="visually-hidden">
+                      Ver publicação no Instagram
+                    </span>
+                  </a>
+                ) : (
+                  image
+                )}
+              </li>
+            );
+          })}
         </ul>
+
+        {instagram && (
+          <p className={styles.cta}>
+            <a
+              href={instagram}
+              className={styles.ctaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver perfil no Instagram
+            </a>
+          </p>
+        )}
       </Container>
     </section>
   );
