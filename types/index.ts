@@ -22,8 +22,6 @@ export interface SiteSocial {
 export interface SiteConfig {
   name: string;
   shortName: string;
-  /** Nome exibido com a fonte manuscrita (logo/assinatura). */
-  signature: string;
   /** Cargo profissional. Ex.: "Psicóloga Clínica". */
   role: string;
   /** Registro profissional. Ex.: "CRP 06/208264". */

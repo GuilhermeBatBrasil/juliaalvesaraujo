@@ -15,34 +15,21 @@
   min-height: 72px;
 }
 
-/* Logo / assinatura */
+/* Logo */
 .logo {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  line-height: 1;
+  flex-shrink: 0;
 }
 
-.logoName {
-  font-family: var(--font-signature);
-  font-size: 1.875rem;
-  letter-spacing: 0.02em;
-  color: var(--color-text);
-  transition: color var(--transition-fast);
+.logoImage {
+  width: auto;
+  height: 44px;
+  transition: opacity var(--transition-fast);
 }
 
-.logo:hover .logoName {
-  color: var(--color-olive);
-}
-
-.logoTag {
-  font-size: 9px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  font-weight: var(--font-weight-medium);
-  color: var(--color-muted);
-  margin-top: -0.125rem;
-  padding-left: 0.25rem;
+.logo:hover .logoImage {
+  opacity: 0.75;
 }
 
 /* Botão hamburger */
@@ -100,8 +87,8 @@
     min-height: var(--header-height);
   }
 
-  .logoName {
-    font-size: 2.25rem;
+  .logoImage {
+    height: 60px;
   }
 
   .toggle {

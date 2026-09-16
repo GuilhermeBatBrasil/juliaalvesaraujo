@@ -23,8 +23,8 @@ export function Hero() {
               Olá! Sou Júlia Araújo, psicóloga dedicada a oferecer um espaço de
               acolhimento e compreensão, tenho me dedicado a apoiar pessoas a
               encontrar equilíbrio e bem-estar. Sei que cada etapa da vida traz seus
-              próprios desafios, e estou aqui para ouvir você para juntos encontrarmos
-              caminhos que façam sentido para você.
+              próprios desafios, e estou aqui para ouvir você, para juntos
+              encontrarmos caminhos que façam sentido para você.
             </p>
 
             <div className={styles.actions}>

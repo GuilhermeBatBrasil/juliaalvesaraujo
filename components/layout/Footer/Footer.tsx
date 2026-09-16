@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Container } from "@/components/layout/Container/Container";
 import { siteConfig } from "@/lib/site-config";
 
@@ -9,8 +11,14 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <Container className={styles.inner}>
-        <div>
-          <span className={styles.signature}>{siteConfig.signature}</span>
+        <div className={styles.brand}>
+          <Image
+            src="/images/logo/logo-light.png"
+            alt={siteConfig.name}
+            width={478}
+            height={299}
+            className={styles.logoImage}
+          />
           <span className={styles.role}>
             {siteConfig.role} • {siteConfig.crp}
           </span>

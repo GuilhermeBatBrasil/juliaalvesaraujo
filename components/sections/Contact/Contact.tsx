@@ -15,8 +15,6 @@ export function Contact() {
 
   return (
     <section id="contato" className={styles.contact} aria-labelledby="contact-title">
-      <div className={styles.ribbon} aria-hidden />
-
       <Container medium className={styles.inner}>
         <div className={styles.grid}>
           <div className={styles.content}>

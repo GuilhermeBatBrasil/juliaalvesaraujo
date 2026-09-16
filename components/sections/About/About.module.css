@@ -30,8 +30,7 @@
 
 .photoImage {
   object-fit: cover;
-  object-position: 30% center;
-  transform: scale(1.1);
+  object-position: center;
 }
 
 /* Biografia */

@@ -25,7 +25,7 @@ const cards: SessionCard[] = [
   {
     icon: CreditCard,
     title: "Pagamento e Cancelamento:",
-    text: "O pagamento é feito por PIX, antes de cada sessão. Se precisar cancelar, peço que me avise com pelo menos 24 horas de antecedência, para que possamos reorganizar a nossa agenda sem pressa.",
+    text: "O pagamento é feito por PIX, antes de cada sessão. Se precisar cancelar, peço que me avise com, pelo menos, 24 horas de antecedência, para que possamos reorganizar a nossa agenda sem pressa.",
   },
 ];
 

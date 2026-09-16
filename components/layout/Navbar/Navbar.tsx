@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { Container } from "@/components/layout/Container/Container";
@@ -27,9 +28,15 @@ export function Navbar() {
   return (
     <header className={styles.header}>
       <Container className={styles.inner}>
-        <a href="#inicio" className={styles.logo}>
-          <span className={styles.logoName}>{siteConfig.signature}</span>
-          <span className={styles.logoTag}>Psicologia</span>
+        <a href="#inicio" className={styles.logo} aria-label={`${siteConfig.name} — ir para o início`}>
+          <Image
+            src="/images/logo/logo-dark.png"
+            alt={siteConfig.name}
+            width={478}
+            height={299}
+            priority
+            className={styles.logoImage}
+          />
         </a>
 
         <button

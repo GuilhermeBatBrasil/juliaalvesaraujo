@@ -7,7 +7,6 @@ import type { NavLink, SiteConfig } from "@/types";
 export const siteConfig: SiteConfig = {
   name: "Psicóloga Júlia Alves de Araújo",
   shortName: "Júlia Araújo",
-  signature: "Júlia Araújo",
   role: "Psicóloga Clínica",
   crp: "CRP 06/208264",
   description:

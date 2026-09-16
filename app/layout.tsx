@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Alex_Brush, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
 import { Footer } from "@/components/layout/Footer/Footer";
 import { Navbar } from "@/components/layout/Navbar/Navbar";
@@ -13,13 +13,6 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-jakarta",
-});
-
-const alexBrush = Alex_Brush({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-  variable: "--font-alex-brush",
 });
 
 export const metadata: Metadata = {
@@ -69,7 +62,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${jakarta.variable} ${alexBrush.variable}`}>
+    <html lang="pt-BR" className={jakarta.variable}>
       <body className={styles.body}>
         <a href="#inicio" className={styles.skipLink}>
           Pular para o conteúdo

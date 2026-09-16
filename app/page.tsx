@@ -12,8 +12,8 @@ export default function HomePage() {
       <About />
       <Journey />
       <Sessions />
-      <Contact />
       <InstagramFeed />
+      <Contact />
     </>
   );
 }
