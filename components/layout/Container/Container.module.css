@@ -5,12 +5,16 @@
   padding-inline: var(--container-padding);
 }
 
+.medium {
+  max-width: var(--container-width-md);
+}
+
 .narrow {
   max-width: var(--container-width-narrow);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .container {
-    padding-inline: var(--spacing-lg);
+    padding-inline: 3rem;
   }
 }
