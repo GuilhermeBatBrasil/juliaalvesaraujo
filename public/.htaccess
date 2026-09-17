@@ -1,0 +1,39 @@
+# Configuração do Apache para o site estático (HostGator / cPanel).
+# Este arquivo é copiado automaticamente para out/ durante o build,
+# pois tudo que está em public/ vai para a raiz do site publicado.
+
+# --- Página de erro -------------------------------------------------------
+# O Next gera out/404/index.html por causa do trailingSlash.
+ErrorDocument 404 /404/index.html
+
+# --- Compressão -----------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# --- Cache ----------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Assets do Next têm hash no nome: podem ser cacheados agressivamente.
+  <FilesMatch "\.(js|css|woff2)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, immutable"
+  </FilesMatch>
+
+  # Imagens mudam de vez em quando (feed do Instagram): cache moderado.
+  ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType image/png "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 7 days"
+
+  # HTML sempre revalidado, para que uma nova publicação apareça na hora.
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# --- Segurança ------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

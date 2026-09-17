@@ -15,8 +15,8 @@ function buildAltText(post: InstagramPost): string {
   return firstLine.length > 120 ? `${firstLine.slice(0, 117)}...` : firstLine;
 }
 
-export async function InstagramFeed() {
-  const posts = await getInstagramPosts();
+export function InstagramFeed() {
+  const posts = getInstagramPosts();
   const { instagram } = siteConfig.social;
 
   return (
@@ -41,8 +41,6 @@ export async function InstagramFeed() {
                 fill
                 sizes="(max-width: 640px) 50vw, 25vw"
                 className={styles.image}
-                // Imagens da CDN do Instagram já vêm otimizadas.
-                unoptimized={post.imageUrl.startsWith("http")}
               />
             );
 
