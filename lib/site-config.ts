@@ -11,16 +11,16 @@ export const siteConfig: SiteConfig = {
   crp: "CRP 06/208264",
   description:
     "Atendimento psicológico online com a psicóloga Júlia Alves de Araújo (CRP 06/208264). Terapia na Abordagem Centrada na Pessoa, em um espaço de acolhimento e escuta.",
-  url: "https://example.com", // TODO: domínio real
+  url: "https://juliaalvesaraujo.com",
   locale: "pt-BR",
   contact: {
-    email: "", // TODO: e-mail real
-    phone: "", // TODO: telefone real
-    whatsappNumber: "", // TODO: apenas dígitos, com DDI e DDD
+    email: "julia081299@gmail.com",
+    phone: "+55 12 99764-0273",
+    whatsappNumber: "5512997640273",
   },
   social: {
-    instagram: "", // TODO: URL do perfil no Instagram
-    linkedin: "", // TODO: URL do perfil no LinkedIn
+    instagram: "https://www.instagram.com/psi.juaraujo/",
+    linkedin: "https://www.linkedin.com/in/juliaalvesdearaujo/",
   },
 };
 

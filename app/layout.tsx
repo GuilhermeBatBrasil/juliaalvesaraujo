@@ -38,12 +38,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} | ${siteConfig.crp}`,
     description: siteConfig.description,
-    // TODO: adicionar /public/images/og-image.jpg (1200x630) e referenciar aqui.
+    images: [
+      {
+        url: "/images/julia/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.crp}`,
     description: siteConfig.description,
+    images: ["/images/julia/og-image.jpg"],
   },
   // Os ícones são detectados automaticamente pelo Next a partir dos
   // arquivos app/favicon.ico, app/icon.png e app/apple-icon.png.
