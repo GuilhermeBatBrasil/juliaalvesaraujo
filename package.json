@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "instagram:sync": "node scripts/sync-instagram.mjs",
-    "instagram:refresh": "node scripts/refresh-instagram-token.mjs"
+    "instagram:refresh": "node scripts/refresh-instagram-token.mjs",
+    "deploy:zip": "powershell -ExecutionPolicy Bypass -File scripts/create-deploy-zip.ps1 -Build"
   },
   "dependencies": {
     "lucide-react": "^0.454.0",
